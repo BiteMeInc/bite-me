@@ -42,7 +42,7 @@ using System.Collections;
 		//private
         [SerializeField] BoxCollider2D m_OriginalTile;
         [SerializeField] Vector2 m_TileGridSize = Vector2.one;
-        [SerializeField] BoxCollider2D[,] m_TileGrid;
+        [SerializeField] Transform[,] m_TileGrid;
 	
 		//properties
 		#endregion
@@ -64,18 +64,27 @@ using System.Collections;
 
             if (m_OriginalTile != null)
             {
-                m_TileGrid = new BoxCollider2D[(int)m_TileGridSize.x, (int)m_TileGridSize.y];
+                m_TileGrid = new Transform[(int)m_TileGridSize.x, (int)m_TileGridSize.y];
 
                 Vector2 tileSize = m_OriginalTile.size;
                 Vector2 gridDimesions = new Vector2(tileSize.x * m_TileGridSize.x, tileSize.y * m_TileGridSize.y);
                 Vector2 halfTileSize = tileSize * 0.5f;
 
-                BoxCollider2D curTile;
+                Transform curTile;
                 for(int x = 0; x < m_TileGrid.GetLength(0); ++x)
                 {
                     for (int y = 0; y < m_TileGrid.GetLength(1); ++y)
                     {
-                        curTile = m_TileGrid[x, y] = GameObject.Instantiate<BoxCollider2D>(m_OriginalTile);
+                        curTile = m_TileGrid[x, y] = GameObject.Instantiate<Transform>(m_OriginalTile.transform);
+                        BoxCollider2D collider = curTile.GetComponent<BoxCollider2D>();
+                        if (collider != null)
+                        {
+#if UNITY_EDITOR
+                            DestroyImmediate(collider);
+#else
+                            Destroy(collider);
+#endif
+                        }
                         Vector3 tilePos = Vector3.zero;
                         tilePos.x = (-gridDimesions.x / 2) + (tileSize.x * x) + halfTileSize.x;
                         tilePos.y = (-gridDimesions.y / 2) + (tileSize.x * y) + halfTileSize.y;
@@ -90,11 +99,12 @@ using System.Collections;
 
         }
 
+        [ContextMenu("Clear Grid")]
         private void ClearGrid()
         {
             if (m_TileGrid != null && m_TileGrid.GetLength(0) > 0)
             {
-                BoxCollider2D curTile = null;
+                Transform curTile = null;
 
                 for (int x = 0; x < m_TileGrid.GetLength(0); ++x)
                 {
