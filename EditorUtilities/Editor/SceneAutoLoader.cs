@@ -25,9 +25,13 @@ using UnityEditor.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 #endregion
+
+#region Other Includes
+using Starvoxel.Core;
+#endregion
 #endregion
 
-namespace EditorUtilities
+namespace Starvoxel.EditorUtilities
 {
     [InitializeOnLoad]
     static class SceneAutoLoader
@@ -110,7 +114,7 @@ namespace EditorUtilities
                         combined += value[i];
                     }
 
-                    Debug.Log("Previous Selection: " + combined);
+                    Services.Logger.LogWithCategory(LoggerConstants.EDITOR_UTILITY_CATEGORY, LogType.Log, "Previous Selection: " + combined);
 
                     EditorPrefs.SetString(EDITORPREFS_PREV_SELECTION_KEY, combined);
                 }
@@ -120,15 +124,6 @@ namespace EditorUtilities
                 }
             }
         }
-        #endregion
-
-        #region Unity Methods
-        #endregion
-
-        #region Public Methods
-        #endregion
-
-        #region Protected Methods
         #endregion
 
         #region Private Methods
@@ -163,7 +158,7 @@ namespace EditorUtilities
 
                     if (!EditorSceneManager.OpenScene(fullMasterPath).IsValid()/*EditorApplication.OpenScene(fullMasterPath)*/)
                     {
-                        Debug.LogError(string.Format("error: scene not found: {0}", MasterScene));
+                        Services.Logger.LogWithCategory(LoggerConstants.EDITOR_UTILITY_CATEGORY, LogType.Error, string.Format("error: scene not found: {0}", MasterScene));
                         EditorApplication.isPlaying = false;
                     }
                 }
@@ -178,7 +173,7 @@ namespace EditorUtilities
                 // Try to return to the old scene
                 if (!EditorSceneManager.OpenScene(PreviousScene).IsValid()/*EditorApplication.OpenScene(PreviousScene)*/)
                 {
-                    Debug.LogError(string.Format("error: scene not found: {0}", PreviousScene));
+                    Services.Logger.LogWithCategory(LoggerConstants.EDITOR_UTILITY_CATEGORY, LogType.Error, "error: scene not found: {0}", PreviousScene);
                 }
                 else
                 {
@@ -190,7 +185,7 @@ namespace EditorUtilities
 
         #region Context Menu Methods
         //Basic function that opens a file panel to allow the user to pick a master scene
-        [MenuItem("Editor/Scene Autoload/Select Master Scene...", false, 50)]
+        [MenuItem("Tools/Scene Autoload/Select Master Scene...", false, 50)]
         private static void SelectMasterScene()
         {
             string masterScene = EditorUtility.OpenFilePanel("Select Master Scene", Application.dataPath, "unity");
@@ -208,23 +203,23 @@ namespace EditorUtilities
             }
         }
 
-        [MenuItem("Editor/Scene Autoload/Load Master On Play", true, 100)]
+        [MenuItem("Tools/Scene Autoload/Load Master On Play", true, 100)]
         private static bool ShowLoadMasterOnPlay()
         {
             return !LoadMasterOnPlay;
         }
-        [MenuItem("Editor/Scene Autoload/Load Master On Play", false, 100)]
+        [MenuItem("Tools/Scene Autoload/Load Master On Play", false, 100)]
         private static void EnableLoadMasterOnPlay()
         {
             LoadMasterOnPlay = true;
         }
 
-        [MenuItem("Editor/Scene Autoload/Don't Load Master On Play", true, 101)]
+        [MenuItem("Tools/Scene Autoload/Don't Load Master On Play", true, 101)]
         private static bool ShowDontLoadMasterOnPlay()
         {
             return LoadMasterOnPlay;
         }
-        [MenuItem("Editor/Scene Autoload/Don't Load Master On Play", false, 101)]
+        [MenuItem("Tools/Scene Autoload/Don't Load Master On Play", false, 101)]
         private static void DisableLoadMasterOnPlay()
         {
             LoadMasterOnPlay = false;
@@ -308,7 +303,7 @@ namespace EditorUtilities
 
                         if (curXform == null)
                         {
-                            Debug.LogError("Unable to return old selection for: " + objects[oIndex]);
+                            Services.Logger.LogWithCategory(LoggerConstants.EDITOR_UTILITY_CATEGORY, LogType.Error, "Unable to return old selection for: " + objects[oIndex]);
                             continue;
                         }
                         else
