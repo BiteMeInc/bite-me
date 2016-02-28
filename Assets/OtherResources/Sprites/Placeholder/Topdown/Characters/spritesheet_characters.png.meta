@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b536a39b5e4b0224f8b423888e02a9bf
-timeCreated: 1454339452
+timeCreated: 1456628937
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -43,7 +43,7 @@ TextureImporter:
     21300072: spritesheet_characters_36
     21300074: spritesheet_characters_37
     21300076: spritesheet_characters_38
-    21300078: spritesheet_characters_39
+    21300078: Enemy1
     21300080: spritesheet_characters_40
     21300082: spritesheet_characters_41
     21300084: spritesheet_characters_42
@@ -93,10 +93,12 @@ TextureImporter:
     21300172: spritesheet_characters_86
     21300174: spritesheet_characters_87
     21300176: spritesheet_characters_88
-    21300178: spritesheet_characters_89
+    21300178: Enemy2
     21300180: spritesheet_characters_90
     21300182: spritesheet_characters_91
     21300184: spritesheet_characters_92
+    21300186: spritesheet_characters_21
+    21300188: spritesheet_characters_39
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -845,7 +847,7 @@ TextureImporter:
         - {x: -16.5, y: -21.5}
         - {x: 17.5, y: -21.5}
         - {x: 17.5, y: 21.5}
-    - name: spritesheet_characters_39
+    - name: Enemy1
       rect:
         serializedVersion: 2
         x: 368
@@ -1617,21 +1619,20 @@ TextureImporter:
     - name: spritesheet_characters_81
       rect:
         serializedVersion: 2
-        x: 296
+        x: 332
         y: 73
-        width: 72
+        width: 36
         height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -35, y: 21.5}
-        - {x: -36, y: 17.5}
-        - {x: -36, y: -15.5}
-        - {x: -29, y: -21.5}
-        - {x: 34, y: -21.5}
-        - {x: 36, y: -20.5}
-        - {x: 36, y: 21.5}
+      - - {x: -18, y: 21.5}
+        - {x: -18, y: -15.5}
+        - {x: -12, y: -21.5}
+        - {x: 15, y: -21.5}
+        - {x: 18, y: -20.5}
+        - {x: 18, y: 21.5}
     - name: spritesheet_characters_82
       rect:
         serializedVersion: 2
@@ -1762,24 +1763,24 @@ TextureImporter:
         - {x: 19.5, y: -20.5}
         - {x: 19.5, y: 18.5}
         - {x: 15.5, y: 21.5}
-    - name: spritesheet_characters_89
+    - name: Enemy2
       rect:
         serializedVersion: 2
-        x: 300
+        x: 337
         y: 29
-        width: 70
+        width: 34
         height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -34, y: 21.5}
-        - {x: -35, y: 17.5}
-        - {x: -35, y: -15.5}
-        - {x: -28, y: -21.5}
-        - {x: 31, y: -21.5}
-        - {x: 35, y: -13.5}
-        - {x: 35, y: 21.5}
+      - - {x: -13, y: 21.5}
+        - {x: -17, y: 13.5}
+        - {x: -17, y: -21.5}
+        - {x: 13, y: -21.5}
+        - {x: 17, y: -12.5}
+        - {x: 17, y: 16.5}
+        - {x: 10, y: 21.5}
     - name: spritesheet_characters_90
       rect:
         serializedVersion: 2
@@ -104493,6 +104494,43 @@ TextureImporter:
         - {x: 28.5, y: -19.5}
         - {x: 28.5, y: -3.5}
         - {x: -2.5, y: 21.5}
+    - name: spritesheet_characters_21
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 28
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 21.5}
+        - {x: -17, y: 20.5}
+        - {x: -17, y: -17.5}
+        - {x: -10, y: -21.5}
+        - {x: 16, y: -21.5}
+        - {x: 17, y: -18.5}
+        - {x: 17, y: 21.5}
+    - name: spritesheet_characters_39
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 73
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 21.5}
+        - {x: -18, y: 14.5}
+        - {x: -18, y: -15.5}
+        - {x: -11, y: -21.5}
+        - {x: 10, y: -21.5}
+        - {x: 18, y: -10.5}
+        - {x: 18, y: 10.5}
+        - {x: 8, y: 21.5}
     outline: []
   spritePackingTag: 
   userData: 
