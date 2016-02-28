@@ -20,7 +20,7 @@
     <view id="MAIN_MENU" scene="MainMenu">
       <action id="GO_TO_SETTINGS" viewID="SETTINGS" />
       <action id="PLAY" viewID="GAME_SCENE" />
-      <action id="GO_TO_PROTOTYPES" viewID="PROTOTYPE_SELECION" />
+      <action id="GO_TO_BASIC_TEST_LEVEL" viewID="BASIC_TEST_LEVEL" />
     </view>
     <!-- @GAME SCENES@ All scenes related to game play -->
     <view id="GAME_SCENE" scene="GameScene" base="BASE_GAME_VIEW" state="XML/States/GameViews/GameScene" />
@@ -29,12 +29,8 @@
         <action id="GO_TO_SETTINGS" viewID="SETTINGS" />
         <action id="GO_TO_MAIN_MENU" viewID="MAIN_MENU" />
     </view>
-    <!-- @PROTOTYPES@ All scenes used for prototypes -->
-    <view id="PROTOTYPE_SELECION" scene="PrototypeSelection">
-        <action id="GO_TO_MAIN_MENU" viewID="MAIN_MENU" />
-        <action id="GO_TO_PLAYER_MOVEMENT" viewID="PLAYER_MOVEMENT" />
-    </view>
-    <view id="PLAYER_MOVEMENT" scene="PlayerMovement">
-        <action id="QUIT" viewID="PROTOTYPE_SELECION" />
+    <!-- @TESTING@ All scenes that have to do with testing various things -->
+    <view id="BASIC_TEST_LEVEL" scene="BasicTestLevel">
+        <action id="QUIT" viewID="MAIN_MENU" />
     </view>
 </flow>
