@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 804a24a6b52a5684db548ef492de67d5
-timeCreated: 1454637933
+timeCreated: 1456712426
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -117,13 +117,13 @@ TextureImporter:
     21300220: spritesheet_tiles_110
     21300222: spritesheet_tiles_111
     21300224: spritesheet_tiles_112
-    21300226: spritesheet_tiles_113
-    21300228: spritesheet_tiles_114
-    21300230: spritesheet_tiles_115
-    21300232: spritesheet_tiles_116
-    21300234: spritesheet_tiles_117
-    21300236: spritesheet_tiles_118
-    21300238: spritesheet_tiles_119
+    21300226: Wall_Brown_Corner_TL
+    21300228: Wall_Brown_Corner_TR
+    21300230: Wall_Brown_Straight_Hor
+    21300232: Wall_Brown_T_Down
+    21300234: Wall_Brown_T_Up
+    21300236: Wall_Brown_End_Right
+    21300238: Wall_Brown_End_Down
     21300240: spritesheet_tiles_120
     21300242: spritesheet_tiles_121
     21300244: spritesheet_tiles_122
@@ -143,13 +143,13 @@ TextureImporter:
     21300272: spritesheet_tiles_136
     21300274: spritesheet_tiles_137
     21300276: spritesheet_tiles_138
-    21300278: spritesheet_tiles_139
-    21300280: spritesheet_tiles_140
-    21300282: spritesheet_tiles_141
-    21300284: spritesheet_tiles_142
-    21300286: spritesheet_tiles_143
-    21300288: spritesheet_tiles_144
-    21300290: spritesheet_tiles_145
+    21300278: Wall_Brown_Corner_BL
+    21300280: Wall_Brown_Corner_BR
+    21300282: Wall_Brown_Straight_Ver
+    21300284: Wall_Brown_T_Right
+    21300286: Wall_Brown_T_Left
+    21300288: Wall_Brown_End_Up
+    21300290: Wall_Brown_End_Left
     21300292: spritesheet_tiles_146
     21300294: spritesheet_tiles_147
     21300296: spritesheet_tiles_148
@@ -2283,7 +2283,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_113
+    - name: Wall_Brown_Corner_TL
       rect:
         serializedVersion: 2
         x: 666
@@ -2298,7 +2298,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_114
+    - name: Wall_Brown_Corner_TR
       rect:
         serializedVersion: 2
         x: 740
@@ -2313,7 +2313,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_115
+    - name: Wall_Brown_Straight_Hor
       rect:
         serializedVersion: 2
         x: 814
@@ -2328,7 +2328,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_116
+    - name: Wall_Brown_T_Down
       rect:
         serializedVersion: 2
         x: 888
@@ -2343,7 +2343,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_117
+    - name: Wall_Brown_T_Up
       rect:
         serializedVersion: 2
         x: 962
@@ -2358,22 +2358,22 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_118
+    - name: Wall_Brown_End_Right
       rect:
         serializedVersion: 2
         x: 1036
-        y: 1110
+        y: 1113
         width: 64
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: 32}
-        - {x: -32, y: -32}
+      - - {x: -32, y: -32}
         - {x: 32, y: -32}
-        - {x: 32, y: 32}
-    - name: spritesheet_tiles_119
+        - {x: 32, y: 31}
+        - {x: -32, y: 31}
+    - name: Wall_Brown_End_Down
       rect:
         serializedVersion: 2
         x: 1110
@@ -2693,7 +2693,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_139
+    - name: Wall_Brown_Corner_BL
       rect:
         serializedVersion: 2
         x: 666
@@ -2708,7 +2708,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_140
+    - name: Wall_Brown_Corner_BR
       rect:
         serializedVersion: 2
         x: 740
@@ -2723,7 +2723,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_141
+    - name: Wall_Brown_Straight_Ver
       rect:
         serializedVersion: 2
         x: 814
@@ -2738,7 +2738,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_142
+    - name: Wall_Brown_T_Right
       rect:
         serializedVersion: 2
         x: 888
@@ -2753,7 +2753,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_143
+    - name: Wall_Brown_T_Left
       rect:
         serializedVersion: 2
         x: 962
@@ -2768,7 +2768,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_144
+    - name: Wall_Brown_End_Up
       rect:
         serializedVersion: 2
         x: 1036
@@ -2783,7 +2783,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_145
+    - name: Wall_Brown_End_Left
       rect:
         serializedVersion: 2
         x: 1110
