@@ -37,6 +37,7 @@ using BehaviorTree = BehaviorDesigner.Runtime.BehaviorTree;
 		//const
         private const string PATROL_POINTS_VARIABLE_NAME = "PatrolPoints";
 
+        private static readonly Color PATROL_POINT_GIZMO_COLOR = Color.cyan;
 		//public
 	
 		//protected
@@ -49,6 +50,21 @@ using BehaviorTree = BehaviorDesigner.Runtime.BehaviorTree;
 		#endregion
 	
 		#region Unity Methods
+        protected override void OnDrawGizmosSelected()
+        {
+            base.OnDrawGizmosSelected();
+
+            if (m_PatrolPoints != null && m_PatrolPoints.Count > 0)
+            {
+                for (int pointCounter = 0; pointCounter < m_PatrolPoints.Count; ++pointCounter)
+                {
+                    Color oldColor = Gizmos.color;
+                    Gizmos.color = PATROL_POINT_GIZMO_COLOR;
+                    Gizmos.DrawCube(m_PatrolPoints[pointCounter].transform.position, Vector3.one);
+                    Gizmos.color = oldColor;
+                }
+            }
+        }
 		#endregion
 	
 		#region Public Methods

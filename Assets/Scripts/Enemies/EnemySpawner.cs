@@ -34,6 +34,7 @@ using BehaviorTree = BehaviorDesigner.Runtime.BehaviorTree;
 	{
 		#region Fields & Properties
 		//const
+        private static readonly Color RADIOUS_GIZMO_COLOR = Color.yellow;
 	
 		//public
 	
@@ -64,6 +65,11 @@ using BehaviorTree = BehaviorDesigner.Runtime.BehaviorTree;
                 }
             }
         }
+
+        protected virtual void OnDrawGizmosSelected()
+        {
+            DrawRadiousGizmo();
+        }
 		#endregion
 	
 		#region Public Methods
@@ -75,6 +81,14 @@ using BehaviorTree = BehaviorDesigner.Runtime.BehaviorTree;
             Vector2 direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
             Vector2 position = direction * Random.Range(0.0f, m_SpawnRadius);
             instance.transform.localPosition = position;
+        }
+
+        protected void DrawRadiousGizmo()
+        {
+            Color oldColor = Gizmos.color;
+            Gizmos.color = RADIOUS_GIZMO_COLOR;
+            Gizmos.DrawWireSphere(this.transform.position, m_SpawnRadius);
+            Gizmos.color = oldColor;
         }
 		#endregion
 	
