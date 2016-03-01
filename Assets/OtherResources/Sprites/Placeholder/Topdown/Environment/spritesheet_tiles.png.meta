@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 804a24a6b52a5684db548ef492de67d5
-timeCreated: 1456712426
+timeCreated: 1456792410
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -441,7 +441,7 @@ TextureImporter:
     21300868: spritesheet_tiles_434
     21300870: spritesheet_tiles_435
     21300872: spritesheet_tiles_436
-    21300874: spritesheet_tiles_437
+    21300874: Door_Wood_Ver
     21300876: sofa_green_left
     21300878: sofa_green_mid
     21300880: sofa_green_right
@@ -466,7 +466,7 @@ TextureImporter:
     21300918: spritesheet_tiles_459
     21300920: spritesheet_tiles_460
     21300922: spritesheet_tiles_461
-    21300924: spritesheet_tiles_462
+    21300924: Door_Wood_Hor
     21300926: sofa_orange_left
     21300928: sofa_orange_mid
     21300930: sofa_orange_right
@@ -480,8 +480,8 @@ TextureImporter:
     21300946: spritesheet_tiles_473
     21300948: spritesheet_tiles_474
     21300950: spritesheet_tiles_475
-    21300952: spritesheet_tiles_476
-    21300954: spritesheet_tiles_477
+    21300952: Window_Thick_Ver
+    21300954: Window_Thick_Hor
     21300956: spritesheet_tiles_478
     21300958: spritesheet_tiles_479
     21300960: spritesheet_tiles_480
@@ -491,7 +491,7 @@ TextureImporter:
     21300968: spritesheet_tiles_484
     21300970: spritesheet_tiles_485
     21300972: spritesheet_tiles_486
-    21300974: spritesheet_tiles_487
+    21300974: Door_Glass_Ver
     21300976: sofa_black_left
     21300978: sofa_black_mid
     21300980: sofa_black_right
@@ -505,8 +505,8 @@ TextureImporter:
     21300996: spritesheet_tiles_498
     21300998: spritesheet_tiles_499
     21301000: spritesheet_tiles_500
-    21301002: spritesheet_tiles_501
-    21301004: spritesheet_tiles_502
+    21301002: Window_Thin_Ver
+    21301004: Window_Thin_Hor
     21301006: spritesheet_tiles_503
     21301008: spritesheet_tiles_504
     21301010: spritesheet_tiles_505
@@ -516,7 +516,7 @@ TextureImporter:
     21301018: spritesheet_tiles_509
     21301020: spritesheet_tiles_510
     21301022: spritesheet_tiles_511
-    21301024: spritesheet_tiles_512
+    21301024: Door_Glass_Hor
     21301026: hair_brown
     21301028: hair_dinning_1
     21301030: chair_dinning_2
@@ -2362,17 +2362,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1036
-        y: 1113
+        y: 1110
         width: 64
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: -32}
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
         - {x: 32, y: -32}
-        - {x: 32, y: 31}
-        - {x: -32, y: 31}
+        - {x: 32, y: 32}
     - name: Wall_Brown_End_Down
       rect:
         serializedVersion: 2
@@ -7480,7 +7480,7 @@ TextureImporter:
         - {x: 11, y: 32}
         - {x: -11, y: 32}
         - {x: -11, y: -32}
-    - name: spritesheet_tiles_437
+    - name: Door_Wood_Ver
       rect:
         serializedVersion: 2
         x: 962
@@ -7878,21 +7878,21 @@ TextureImporter:
         - {x: 32, y: -11}
         - {x: 32, y: 11}
         - {x: -32, y: 11}
-    - name: spritesheet_tiles_462
+    - name: Door_Wood_Hor
       rect:
         serializedVersion: 2
         x: 962
-        y: 148
+        y: 149
         width: 64
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: -11}
-        - {x: 32, y: -11}
-        - {x: 32, y: 11}
-        - {x: -32, y: 11}
+      - - {x: -32, y: -12}
+        - {x: 32, y: -12}
+        - {x: 32, y: 10}
+        - {x: -32, y: 10}
     - name: sofa_orange_left
       rect:
         serializedVersion: 2
@@ -8111,7 +8111,7 @@ TextureImporter:
         - {x: 14, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_476
+    - name: Window_Thick_Ver
       rect:
         serializedVersion: 2
         x: 148
@@ -8126,7 +8126,7 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_477
+    - name: Window_Thick_Hor
       rect:
         serializedVersion: 2
         x: 222
@@ -8276,7 +8276,7 @@ TextureImporter:
         - {x: 11, y: 32}
         - {x: -11, y: 32}
         - {x: -11, y: -32}
-    - name: spritesheet_tiles_487
+    - name: Door_Glass_Ver
       rect:
         serializedVersion: 2
         x: 962
@@ -8508,10 +8508,10 @@ TextureImporter:
         - {x: 32, y: -32}
         - {x: 32, y: -14}
         - {x: -32, y: -14}
-    - name: spritesheet_tiles_501
+    - name: Window_Thin_Ver
       rect:
         serializedVersion: 2
-        x: 148
+        x: 149
         y: 0
         width: 64
         height: 64
@@ -8523,21 +8523,21 @@ TextureImporter:
         - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
-    - name: spritesheet_tiles_502
+    - name: Window_Thin_Hor
       rect:
         serializedVersion: 2
         x: 222
-        y: 0
+        y: 1
         width: 64
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: 32}
-        - {x: -32, y: -32}
+      - - {x: -32, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
+        - {x: -32, y: 32}
     - name: spritesheet_tiles_503
       rect:
         serializedVersion: 2
@@ -8673,7 +8673,7 @@ TextureImporter:
         - {x: 32, y: -11}
         - {x: 32, y: 11}
         - {x: -32, y: 11}
-    - name: spritesheet_tiles_512
+    - name: Door_Glass_Hor
       rect:
         serializedVersion: 2
         x: 962
