@@ -45,7 +45,8 @@ using System.Collections;
         [Header("Armor")]
         [SerializeField] protected float m_MaxArmor = 0;
         [SerializeField] protected float m_CurrentArmor = 0;
-	
+
+        public event System.Action<Vitals> OnDead;
 		//private
 	
 		//properties
@@ -65,6 +66,11 @@ using System.Collections;
         public float CurrentArmor
         {
             get { return m_CurrentArmor; }
+        }
+
+        public bool IsAlive
+        {
+            get { return m_CurrentHealth > 0; }
         }
 		#endregion
 	
@@ -110,7 +116,10 @@ using System.Collections;
                 // If we're now dead, fire the dead event
                 if (m_CurrentHealth <= 0)
                 {
-                    //TODO jsmellie: Fire the dead event
+                    if (OnDead != null)
+                    {
+                        OnDead(this);
+                    }
                 }
             }
         }
