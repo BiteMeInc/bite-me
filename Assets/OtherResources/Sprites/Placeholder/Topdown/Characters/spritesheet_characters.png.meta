@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b536a39b5e4b0224f8b423888e02a9bf
-timeCreated: 1456628937
+timeCreated: 1459706028
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -94,9 +94,9 @@ TextureImporter:
     21300174: spritesheet_characters_87
     21300176: spritesheet_characters_88
     21300178: Enemy2
-    21300180: spritesheet_characters_90
-    21300182: spritesheet_characters_91
-    21300184: spritesheet_characters_92
+    21300180: Rifle
+    21300182: Uzi
+    21300184: Pistol
     21300186: spritesheet_characters_21
     21300188: spritesheet_characters_39
   serializedVersion: 2
@@ -1781,15 +1781,15 @@ TextureImporter:
         - {x: 17, y: -12.5}
         - {x: 17, y: 16.5}
         - {x: 10, y: 21.5}
-    - name: spritesheet_characters_90
+    - name: Rifle
       rect:
         serializedVersion: 2
         x: 0
         y: 18
         width: 33
         height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -24.5, y: 21.5}
@@ -35280,15 +35280,15 @@ TextureImporter:
         - {x: 28.5, y: -19.5}
         - {x: 28.5, y: -3.5}
         - {x: -2.5, y: 21.5}
-    - name: spritesheet_characters_91
+    - name: Uzi
       rect:
         serializedVersion: 2
         x: 0
         y: 7
         width: 25
         height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -24.5, y: 21.5}
@@ -69515,15 +69515,15 @@ TextureImporter:
         - {x: 28.5, y: -19.5}
         - {x: 28.5, y: -3.5}
         - {x: -2.5, y: 21.5}
-    - name: spritesheet_characters_92
+    - name: Pistol
       rect:
         serializedVersion: 2
         x: 26
         y: 7
         width: 19
         height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -24.5, y: 21.5}

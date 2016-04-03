@@ -25,10 +25,11 @@ using System.Collections;
 
 #region Other Includes
 using Starvoxel.BiteMe;
+using BiteMeCharacter = Starvoxel.BiteMe.Character;
 #endregion
 #endregion
 
-namespace BehaviorDesigner.Runtime.Tasks
+namespace BehaviorDesigner.Runtime.Tasks.BiteMe.Character
 {
     [TaskCategory("Bite Me/Character")]
     [TaskDescription("Sets a float value")]
@@ -47,7 +48,12 @@ namespace BehaviorDesigner.Runtime.Tasks
         {
             if (m_Vitals == null)
             {
-                m_Vitals = this.gameObject.GetComponent<Vitals>();
+                BiteMeCharacter character = this.gameObject.GetComponent<BiteMeCharacter>();
+
+                if (character != null)
+                {
+                    m_Vitals = character.Vitals;
+                }
             }
 
             // If this objet doesn't have health, then this task can't be done!

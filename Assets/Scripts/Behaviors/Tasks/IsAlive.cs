@@ -25,6 +25,7 @@ using System.Collections;
 
 #region Other Includes
 using Starvoxel.BiteMe;
+using BiteMeCharacter = Starvoxel.BiteMe.Character;
 #endregion
 #endregion
 
@@ -43,14 +44,17 @@ namespace BehaviorDesigner.Runtime.Tasks.BiteMe.Character
         {
             if (m_Vitals == null)
             {
+                BiteMeCharacter character;
                 if (target.Value != null)
                 {
-                    m_Vitals = target.Value.GetComponent<Vitals>();
+                    character = target.Value.GetComponent<BiteMeCharacter>();
                 }
                 else
                 {
-                    m_Vitals = this.gameObject.GetComponent<Vitals>();
+                    character = this.gameObject.GetComponent<BiteMeCharacter>();
                 }
+
+                m_Vitals = character.Vitals;
             }
 
             // If this objet doesn't have health or is dead, then it's a fail

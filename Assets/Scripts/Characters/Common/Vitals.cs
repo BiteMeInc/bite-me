@@ -30,7 +30,8 @@ using System.Collections;
 
  namespace Starvoxel.BiteMe
 {
-	public class Vitals : CustomMono
+     [System.Serializable]
+	public class Vitals
 	{
 		#region Fields & Properties
 		//const
@@ -73,20 +74,18 @@ using System.Collections;
             get { return m_CurrentHealth > 0; }
         }
 		#endregion
-	
-		#region Unity Methods
-        protected virtual void Awake()
+
+        #region Public Methods
+         public virtual void Initialize()
         {
             UpdateCurrentValues();
         }
-		#endregion
-	
-		#region Public Methods
+
         /// <summary>
         /// Udates the health values based off the damage passed in
         /// </summary>
         /// <param name="damage">Damage to be done</param>
-        protected virtual void TakeDamage(float damage)
+        public virtual void TakeDamage(float damage)
         {
             /* TODO jsmellie: Figure out what the algorithm for the damage should be...  How does armor work?  
              * Does it take 100% of the damage while it exists? Is it just some kind of damage reductions?
