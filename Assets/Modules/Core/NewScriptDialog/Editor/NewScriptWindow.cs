@@ -1362,7 +1362,7 @@ public class NewScriptWindow : EditorWindow
 
             if (!string.IsNullOrEmpty(ns))
             {
-                m_ScriptPrescription.m_Namespace = " namespace " + ns + "\n{";
+                m_ScriptPrescription.m_Namespace = " namespace " + ns + "\r\n{";
             }
             else
             {
@@ -1468,7 +1468,8 @@ public class NewScriptWindow : EditorWindow
             Directory.CreateDirectory(TargetDir());
 
         var writer = new StreamWriter(TargetPath());
-        writer.Write(new NewScriptGenerator(m_ScriptPrescription).ToString());
+        string fileContents = new NewScriptGenerator(m_ScriptPrescription).ToString();
+        writer.Write(fileContents);
         writer.Close();
         writer.Dispose();
         AssetDatabase.Refresh();

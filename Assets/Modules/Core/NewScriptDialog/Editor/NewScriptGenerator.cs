@@ -10,6 +10,8 @@ namespace UnityEditor
 {
 	internal class NewScriptGenerator
 	{
+        private const string NEW_LINE = "\r\n";
+
 		private const int kCommentWrapLength = 35;
 		
 		private TextWriter m_Writer;
@@ -52,10 +54,7 @@ namespace UnityEditor
 		{
 			m_Text = m_ScriptPrescription.m_Template;
 			m_Writer = new StringWriter ();
-			m_Writer.NewLine = "\n";
-			
-			// Make sure all line endings are Unix (Mac OS X) format
-			m_Text = Regex.Replace (m_Text, @"\r\n?", delegate(Match m) { return "\n"; });
+            m_Writer.NewLine = NEW_LINE;
 			
 			// Class Name
 			m_Text = m_Text.Replace ("$ClassName", ClassName);
@@ -78,7 +77,7 @@ namespace UnityEditor
                 string endString = "}";
                 if (m_Text[m_Text.Length - 1] != '\n')
                 {
-                    endString = endString.Insert(0, "\n");
+                    endString = endString.Insert(0, NEW_LINE);
                 }
                 m_Text += endString;
             }
@@ -107,7 +106,7 @@ namespace UnityEditor
 					
 					// Replace $Functions keyword plus newline with generated functions text
 					if (hasFunctions)
-						m_Text = m_Text.Replace (match.Value + "\n", m_Writer.ToString ());
+                        m_Text = m_Text.Replace(match.Value + NEW_LINE, m_Writer.ToString());
 				}
 				
 				if (!hasFunctions)
@@ -117,7 +116,7 @@ namespace UnityEditor
 						m_Text = m_Text.Replace (match.Value, m_Indentation + "pass");
 					else
 						// Otherwise just remove $Functions keyword plus newline
-						m_Text = m_Text.Replace (match.Value + "\n", string.Empty);
+                        m_Text = m_Text.Replace(match.Value + NEW_LINE, string.Empty);
 				}
 			}
 			
@@ -136,9 +135,9 @@ namespace UnityEditor
 		
 		private void PutCurveBracesOnNewLine ()
 		{
-			m_Text = Regex.Replace (m_Text, @"(\t*)(.*) {\n((\t*)\n(\t*))?", delegate(Match match)
+			m_Text = Regex.Replace (m_Text, @"(\t*)(.*) {\r\n((\t*)\r\n(\t*))?", delegate(Match match)
 			{
-				return match.Groups[1].Value + match.Groups[2].Value + "\n" + match.Groups[1].Value + "{\n" +
+                return match.Groups[1].Value + match.Groups[2].Value + NEW_LINE + match.Groups[1].Value + "{\r\n" +
 					(match.Groups[4].Value == match.Groups[5].Value ? match.Groups[4].Value : match.Groups[3].Value);
 			});
 		}
